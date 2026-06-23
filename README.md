@@ -1,6 +1,6 @@
 # 🏆 Speed Chess Championship 2024 — ML Prediction Model
 
-Predicting the results of the [Speed Chess Championship 2024](https://www.chess.com/events/2024-speed-chess-championship-main-event) using **XGBoost** and **Monte Carlo simulation**.
+Predicting results of the [Speed Chess Championship 2024](https://www.chess.com/events/2024-speed-chess-championship-main-event) using **XGBoost** and **Monte Carlo simulation**.
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![XGBoost](https://img.shields.io/badge/XGBoost-2.0+-green.svg)
