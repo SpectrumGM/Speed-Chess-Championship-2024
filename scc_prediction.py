@@ -10,9 +10,6 @@ from collections import defaultdict
 
 os.makedirs("../data", exist_ok=True)
 
-print("✅ Все библиотеки загружены!")
-
-
 
 # ЯЧЕЙКА 2: Список игроков и турнирная сетка
 players = {
@@ -59,8 +56,6 @@ bracket_r1 = [
 # Winner I vs Winner J
 # Winner K vs Winner L
 
-print(f"✅ {len(players)} игроков загружено")
-print(f"✅ {len(bracket_r1)} матчей в Round 1")
 for i, (a, b) in enumerate(bracket_r1):
     print(f"   Матч {chr(65+i)}: {a} vs {b}")
 
@@ -104,7 +99,6 @@ ratings_data.append({
 df_ratings = pd.DataFrame(ratings_data)
 df_ratings.to_csv("../data/players_ratings.csv", index=False)
 
-print(f"\n✅ Рейтинги собраны для {len(df_ratings)} игроков:\n")
 print(df_ratings[["name", "blitz_rating", "bullet_rating"]].to_string(index=False))
 
 
@@ -124,10 +118,6 @@ for name, username in players.items():
     archives_url = f"https://api.chess.com/pub/player/{username}/games/archives"
     headers = {"User-Agent": "SpeedChessPredictor/1.0"}
     resp = requests.get(archives_url, headers=headers)
-    
-    if resp.status_code != 200:
-        print(f"  ⚠️ Не удалось получить архивы для {name}")
-        continue
     
     archives = resp.json().get("archives", [])
     
@@ -205,7 +195,7 @@ for name, username in players.items():
 df_games = pd.DataFrame(all_games)
 df_games.to_csv("../data/h2h_games.csv", index=False)
 
-print(f"\n✅ Всего собрано {len(df_games)} партий между нашими 16 игроками")
+print(f"\n Всего собрано {len(df_games)} партий между нашими 16 игроками")
 print(f"   Блиц: {len(df_games[df_games['time_class']=='blitz'])}")
 print(f"   Буллет: {len(df_games[df_games['time_class']=='bullet'])}")
 
@@ -216,14 +206,14 @@ print("=" * 60)
 print("СТАТИСТИКА СОБРАННЫХ ПАРТИЙ")
 print("=" * 60)
 
-print("\n📊 Количество партий каждого игрока (как белые + как чёрные):")
+print("\n Количество партий каждого игрока (как белые + как чёрные):")
 for name in players.keys():
     as_white = len(df_games[df_games["white"] == name])
     as_black = len(df_games[df_games["black"] == name])
     total = as_white + as_black
     print(f"   {name}: {total} партий ({as_white} белыми, {as_black} чёрными)")
 
-print("\n📊 Head-to-head для матчей Round 1:")
+print("\n Head-to-head для матчей Round 1:")
 for player_a, player_b in bracket_r1:
     # Партии где A белые, B чёрные
     ab = df_games[(df_games["white"] == player_a) & (df_games["black"] == player_b)]
@@ -366,7 +356,7 @@ for _, game in df_games.iterrows():
 
 df_train = pd.DataFrame(training_data)
 
-print(f"✅ Обучающая выборка: {len(df_train)} партий")
+print(f" Обучающая выборка: {len(df_train)} партий")
 print(f"   Средний результат: {df_train['result'].mean():.3f}")
 print(f"   (должно быть около 0.5 если данные сбалансированы)")
 print(f"\nПервые 5 строк:")
@@ -420,7 +410,7 @@ print(f"\n📊 Cross-validation accuracy: {scores.mean():.3f} ± {scores.std():.
 print(f"   По разбиениям: {[f'{s:.3f}' for s in scores]}")
 
 model.fit(X, y)
-print(f"\n✅ Модель обучена на {len(X)} партиях")
+print(f"\n Модель обучена на {len(X)} партиях")
 
 importances = model.feature_importances_
 print("\n📊 Важность фичей (чем больше — тем важнее):")
