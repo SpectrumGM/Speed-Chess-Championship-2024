@@ -2,9 +2,6 @@
 
 Predicting results of the [Speed Chess Championship 2024](https://www.chess.com/events/2024-speed-chess-championship-main-event) using **XGBoost** and **Monte Carlo simulation**.
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![XGBoost](https://img.shields.io/badge/XGBoost-2.0+-green.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Results
 
