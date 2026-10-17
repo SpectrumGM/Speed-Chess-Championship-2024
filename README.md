@@ -69,8 +69,3 @@ pip install -r requirements.txt
 # Run the notebook
 jupyter notebook notebooks/scc_prediction.ipynb
 ```
-
-
-## License
-
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
