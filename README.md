@@ -56,24 +56,6 @@ blitz_diff                 3.1%  █
 bullet_diff                3.7%  █
 ```
 
-## Project Structure
-
-```
-speed-chess-prediction/
-├── README.md
-├── requirements.txt
-├── LICENSE
-├── notebooks/
-│   └── scc_prediction.ipynb      # Main analysis 
-├── src/
-│   └── predict.py                # Core prediction functions
-├── data/
-│   ├── players_ratings.csv       # Player ratings
-│   └── h2h_games.csv             # Head-to-head game history
-└── results/
-    └── tournament_predictions.txt # Full bracket predictions
-```
-
 ## Quick Start
 
 ```bash
