@@ -64,7 +64,7 @@ speed-chess-prediction/
 ├── requirements.txt
 ├── LICENSE
 ├── notebooks/
-│   └── scc_prediction.ipynb      # Main analysis notebook
+│   └── scc_prediction.ipynb      # Main analysis 
 ├── src/
 │   └── predict.py                # Core prediction functions
 ├── data/
